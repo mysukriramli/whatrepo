@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at_utc": "2026-10-22T05:57:41.805471+00:00",
+    "generated_at_utc": "2026-10-22T12:04:56.024416+00:00",
     "schema_version": "1.0.0",
     "services_tracked": 5,
     "scoring_rule": "DriftScore = min(100.0, BreakageSeverity * SDKLagMultiplier)"
@@ -16,12 +16,12 @@
       "sdk_ecosystem": "pypi",
       "sdk_package": "PyGithub",
       "sdk_latest_version": "2.10.0",
-      "sdk_release_age_days": 62.8,
+      "sdk_release_age_days": 63.1,
       "drift_score": 0.0,
       "directive": "SAFE_TO_UPGRADE",
       "confidence": 0.9,
       "reason_codes": [
-        "BASELINE_INITIALIZED"
+        "SPEC_EXPANDED_COMPATIBLE"
       ]
     },
     {
@@ -34,12 +34,12 @@
       "sdk_ecosystem": "pypi",
       "sdk_package": "openai",
       "sdk_latest_version": "3.36.1",
-      "sdk_release_age_days": 0.1,
+      "sdk_release_age_days": 0.4,
       "drift_score": 0.0,
       "directive": "SAFE_TO_UPGRADE",
       "confidence": 0.9,
       "reason_codes": [
-        "BASELINE_INITIALIZED"
+        "SPEC_EXPANDED_COMPATIBLE"
       ]
     },
     {
@@ -52,12 +52,12 @@
       "sdk_ecosystem": "pypi",
       "sdk_package": "stripe",
       "sdk_latest_version": "16.0.0",
-      "sdk_release_age_days": 21.2,
+      "sdk_release_age_days": 21.5,
       "drift_score": 0.0,
       "directive": "SAFE_TO_UPGRADE",
       "confidence": 0.9,
       "reason_codes": [
-        "BASELINE_INITIALIZED"
+        "SPEC_EXPANDED_COMPATIBLE"
       ]
     },
     {
@@ -70,12 +70,12 @@
       "sdk_ecosystem": "pypi",
       "sdk_package": "resend",
       "sdk_latest_version": "2.50.0",
-      "sdk_release_age_days": 5.4,
+      "sdk_release_age_days": 5.7,
       "drift_score": 0.0,
       "directive": "SAFE_TO_UPGRADE",
       "confidence": 0.9,
       "reason_codes": [
-        "BASELINE_INITIALIZED"
+        "SPEC_EXPANDED_COMPATIBLE"
       ]
     },
     {
@@ -87,13 +87,13 @@
       "breaking_changes": [],
       "sdk_ecosystem": "pypi",
       "sdk_package": "posthog",
-      "sdk_latest_version": "7.75.0",
-      "sdk_release_age_days": 0.6,
+      "sdk_latest_version": "7.75.4",
+      "sdk_release_age_days": 0.1,
       "drift_score": 0.0,
       "directive": "SAFE_TO_UPGRADE",
       "confidence": 0.9,
       "reason_codes": [
-        "BASELINE_INITIALIZED"
+        "SPEC_EXPANDED_COMPATIBLE"
       ]
     }
   ]
