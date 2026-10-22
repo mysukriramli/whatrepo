@@ -1,0 +1,48 @@
+name: API Drift Preemption Wire Cron
+
+on:
+  schedule:
+    # Runs every 6 hours at minute 18 (off-peak)
+    - cron: '18 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-wire:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --break-system-packages --upgrade pip
+          python3 -m pip install --break-system-packages -r requirements.txt
+
+      - name: Execute API Drift Engine
+        run: |
+          python3 main.py
+
+      - name: Commit and push updates
+        run: |
+          git config user.name "drift-wire-bot[bot]"
+          git config user.email "drift-wire-bot@users.noreply.github.com"
+          git add -A data/
+          
+          if git diff --staged --quiet; then
+            echo "No schema drift detected. Skipping commit."
+          else
+            git commit -m "chore(drift): record API schema diff & SDK status [skip ci]"
+            git push origin main
+          fi
