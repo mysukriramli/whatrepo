@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "generated_at_utc": "2026-10-24T04:47:32.104882+00:00",
+    "schema_version": "1.0.0",
+    "services_tracked": 5,
+    "scoring_rule": "DriftScore = min(100.0, BreakageSeverity * SDKLagMultiplier)"
+  },
+  "services": [
+    {
+      "service_id": "github",
+      "service_name": "GitHub REST API",
+      "spec_url": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json",
+      "spec_hash_sha256": "df3d56bae2582e1ef0d464ed0f433a9c8285518775cb55a40e38ce49e4793558",
+      "total_endpoints": 1242,
+      "breaking_changes": [],
+      "sdk_ecosystem": "pypi",
+      "sdk_package": "PyGithub",
+      "sdk_latest_version": "2.10.0",
+      "sdk_release_age_days": 64.8,
+      "drift_score": 0.0,
+      "directive": "SAFE_TO_UPGRADE",
+      "confidence": 0.9,
+      "reason_codes": [
+        "SPEC_EXPANDED_COMPATIBLE"
+      ]
+    },
+    {
+      "service_id": "openai",
+      "service_name": "OpenAI API",
+      "spec_url": "https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml",
+      "spec_hash_sha256": "1878a266f41ccec771d741c4616de3f2d2bfbd371e6445c0551dc1d98370cc81",
+      "total_endpoints": 1,
+      "breaking_changes": [],
+      "sdk_ecosystem": "pypi",
+      "sdk_package": "openai",
+      "sdk_latest_version": "3.37.0",
+      "sdk_release_age_days": 1.4,
+      "drift_score": 0.0,
+      "directive": "SAFE_TO_UPGRADE",
+      "confidence": 0.9,
+      "reason_codes": [
+        "SPEC_EXPANDED_COMPATIBLE"
+      ]
+    },
+    {
+      "service_id": "stripe",
+      "service_name": "Stripe API",
+      "spec_url": "https://raw.githubusercontent.com/stripe/openapi/master/openapi/spec3.json",
+      "spec_hash_sha256": "fbcdece048b98b29152a459f3839418624f3b454a37d1afcb644f4db0dd80613",
+      "total_endpoints": 612,
+      "breaking_changes": [],
+      "sdk_ecosystem": "pypi",
+      "sdk_package": "stripe",
+      "sdk_latest_version": "16.0.0",
+      "sdk_release_age_days": 23.2,
+      "drift_score": 0.0,
+      "directive": "SAFE_TO_UPGRADE",
+      "confidence": 0.9,
+      "reason_codes": [
+        "SPEC_EXPANDED_COMPATIBLE"
+      ]
+    },
+    {
+      "service_id": "resend",
+      "service_name": "Resend Email API",
+      "spec_url": "https://raw.githubusercontent.com/resend/resend-openapi/main/openapi.json",
+      "spec_hash_sha256": "b66e7b63887686156d617fd1e0135f42af6174f9dd9b5f1a5980ecd830c03486",
+      "total_endpoints": 1,
+      "breaking_changes": [],
+      "sdk_ecosystem": "pypi",
+      "sdk_package": "resend",
+      "sdk_latest_version": "2.50.0",
+      "sdk_release_age_days": 7.4,
+      "drift_score": 0.0,
+      "directive": "SAFE_TO_UPGRADE",
+      "confidence": 0.9,
+      "reason_codes": [
+        "SPEC_EXPANDED_COMPATIBLE"
+      ]
+    },
+    {
+      "service_id": "posthog",
+      "service_name": "PostHog API",
+      "spec_url": "https://raw.githubusercontent.com/PostHog/posthog/master/posthog/api/openapi.json",
+      "spec_hash_sha256": "ba6a3e6ed4367f231381b4b6269dd8d3838b8a88a7634e836f5f3ec574430e86",
+      "total_endpoints": 1,
+      "breaking_changes": [],
+      "sdk_ecosystem": "pypi",
+      "sdk_package": "posthog",
+      "sdk_latest_version": "7.75.11",
+      "sdk_release_age_days": 0.6,
+      "drift_score": 0.0,
+      "directive": "SAFE_TO_UPGRADE",
+      "confidence": 0.9,
+      "reason_codes": [
+        "SPEC_EXPANDED_COMPATIBLE"
+      ]
+    }
+  ]
+}
