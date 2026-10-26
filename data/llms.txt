@@ -1,12 +1,12 @@
 # API Drift Preemption Wire
-> Last updated: 2026-10-26T13:18:06.134730+00:00 UTC | Continuous Contract Breakage Radar for AI Agents
+> Last updated: 2026-10-26T22:46:06.868261+00:00 UTC | Continuous Contract Breakage Radar for AI Agents
 > Tracks breaking changes in upstream OpenAPI specifications and SDK release staleness.
 
 ## Active API Drift Directives
 | Service | Drift Score | Directive | Endpoints | Breaking Changes | SDK Tracked |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **GitHub REST API** | `0.0` | `SAFE_TO_UPGRADE` | 1,242 | 0 | `PyGithub@2.10.0` |
-| **OpenAI API** | `0.0` | `SAFE_TO_UPGRADE` | 1 | 0 | `openai@3.37.0` |
+| **OpenAI API** | `0.0` | `SAFE_TO_UPGRADE` | 1 | 0 | `openai@3.39.0` |
 | **Stripe API** | `0.0` | `SAFE_TO_UPGRADE` | 612 | 0 | `stripe@16.0.0` |
 | **Resend Email API** | `0.0` | `SAFE_TO_UPGRADE` | 1 | 0 | `resend@2.50.0` |
 | **PostHog API** | `0.0` | `SAFE_TO_UPGRADE` | 1 | 0 | `posthog@7.75.11` |
