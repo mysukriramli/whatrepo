@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at_utc": "2026-10-27T22:24:43.763104+00:00",
+    "generated_at_utc": "2026-10-28T05:55:30.258726+00:00",
     "schema_version": "1.0.0",
     "services_tracked": 5,
     "scoring_rule": "DriftScore = min(100.0, BreakageSeverity * SDKLagMultiplier)"
@@ -10,48 +10,18 @@
       "service_id": "github",
       "service_name": "GitHub REST API",
       "spec_url": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json",
-      "spec_hash_sha256": "55de1fa32d0480b36d6ca7941e3d018999b09f09354fb443833dc8bbde21b537",
-      "total_endpoints": 1247,
-      "breaking_changes": [
-        {
-          "change_type": "ENDPOINT_OR_METHOD_REMOVED",
-          "path": "/agents/automations/available-tools",
-          "method": "GET",
-          "detail": "Operation GET /agents/automations/available-tools was removed from the active OpenAPI specification.",
-          "severity": 9.0
-        },
-        {
-          "change_type": "ENDPOINT_OR_METHOD_REMOVED",
-          "path": "/agents/automations/available-triggers",
-          "method": "GET",
-          "detail": "Operation GET /agents/automations/available-triggers was removed from the active OpenAPI specification.",
-          "severity": 9.0
-        },
-        {
-          "change_type": "ENDPOINT_OR_METHOD_REMOVED",
-          "path": "/agents/automations/{automation_id}",
-          "method": "GET",
-          "detail": "Operation GET /agents/automations/{automation_id} was removed from the active OpenAPI specification.",
-          "severity": 9.0
-        },
-        {
-          "change_type": "ENDPOINT_OR_METHOD_REMOVED",
-          "path": "/agents/automations/{automation_id}/tasks",
-          "method": "GET",
-          "detail": "Operation GET /agents/automations/{automation_id}/tasks was removed from the active OpenAPI specification.",
-          "severity": 9.0
-        }
-      ],
+      "spec_hash_sha256": "5653257f14984aaf13bf35c51a10c9aa6a3ead3072cbf3f52e88871ae43c399f",
+      "total_endpoints": 1254,
+      "breaking_changes": [],
       "sdk_ecosystem": "pypi",
       "sdk_package": "PyGithub",
       "sdk_latest_version": "2.10.0",
-      "sdk_release_age_days": 68.5,
-      "drift_score": 46.8,
-      "directive": "PIN_SDK",
-      "confidence": 0.95,
+      "sdk_release_age_days": 68.8,
+      "drift_score": 0.0,
+      "directive": "SAFE_TO_UPGRADE",
+      "confidence": 0.9,
       "reason_codes": [
-        "ENDPOINT_REMOVED",
-        "SDK_LAG_BEHIND_SPEC"
+        "SPEC_EXPANDED_COMPATIBLE"
       ]
     },
     {
@@ -64,7 +34,7 @@
       "sdk_ecosystem": "pypi",
       "sdk_package": "openai",
       "sdk_latest_version": "3.40.0",
-      "sdk_release_age_days": 0.3,
+      "sdk_release_age_days": 0.6,
       "drift_score": 0.0,
       "directive": "SAFE_TO_UPGRADE",
       "confidence": 0.9,
@@ -82,7 +52,7 @@
       "sdk_ecosystem": "pypi",
       "sdk_package": "stripe",
       "sdk_latest_version": "16.0.1",
-      "sdk_release_age_days": 0.9,
+      "sdk_release_age_days": 1.2,
       "drift_score": 0.0,
       "directive": "SAFE_TO_UPGRADE",
       "confidence": 0.9,
@@ -100,7 +70,7 @@
       "sdk_ecosystem": "pypi",
       "sdk_package": "resend",
       "sdk_latest_version": "2.50.0",
-      "sdk_release_age_days": 11.1,
+      "sdk_release_age_days": 11.4,
       "drift_score": 0.0,
       "directive": "SAFE_TO_UPGRADE",
       "confidence": 0.9,
@@ -118,7 +88,7 @@
       "sdk_ecosystem": "pypi",
       "sdk_package": "posthog",
       "sdk_latest_version": "7.76.0",
-      "sdk_release_age_days": 0.4,
+      "sdk_release_age_days": 0.7,
       "drift_score": 0.0,
       "directive": "SAFE_TO_UPGRADE",
       "confidence": 0.9,
