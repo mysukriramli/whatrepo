@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "catalog_version": "1.0.0",
+  "namespace": "mysukriramli",
+  "generated_at_utc": "2026-11-01T02:45:00Z",
+  "registry": "https://github.com/mysukriramli/whatrepo",
+  "network_telemetry": {
+    "total_nodes": 67,
+    "active_ingestion_nodes": 64,
+    "coordination_clock": "https://raw.githubusercontent.com/mysukriramli/agent-world-time/main/manifest.json",
+    "network_heartbeat": "https://raw.githubusercontent.com/mysukriramli/agent-canary-wire/main/manifest.json"
+  },
+  "nodes": [
+    {
+      "name": "H3-Earth-State",
+      "category": "Spatial & Environmental Perception",
+      "status": "PRODUCTION",
+      "role": "Hexagonal discrete spatial partitioning anchor",
+      "repo_url": "https://github.com/mysukriramli/H3-Earth-State",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/H3-Earth-State/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/latest_earth_cells.json"
+      }
+    },
+    {
+      "name": "hydro-pavement-friction-edge",
+      "category": "Edge & Physical Grounding",
+      "status": "PRODUCTION",
+      "role": "Dynamic surface friction (mu) and hydroplane hazard models",
+      "repo_url": "https://github.com/mysukriramli/hydro-pavement-friction-edge",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/hydro-pavement-friction-edge/main/manifest.json",
+      "dependencies": [
+        "H3-Earth-State",
+        "spatial-geometry-proof-wire"
+      ],
+      "entrypoints": {
+        "module": "src/friction_model.py",
+        "live_feed": "data/latest_friction_coefficients.json"
+      }
+    },
+    {
+      "name": "spatial-geometry-proof-wire",
+      "category": "Spatial & Environmental Perception",
+      "status": "PRODUCTION",
+      "role": "Formal mathematical polygon boundary and ZK spatial proofs",
+      "repo_url": "https://github.com/mysukriramli/spatial-geometry-proof-wire",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/spatial-geometry-proof-wire/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/latest_geometry_proofs.json"
+      }
+    },
+    {
+      "name": "satellite-intelligence-wire",
+      "category": "Spatial & Environmental Perception",
+      "status": "PRODUCTION",
+      "role": "Orbital earth observation and SAR vector streaming",
+      "repo_url": "https://github.com/mysukriramli/satellite-intelligence-wire",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/satellite-intelligence-wire/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/latest_orbital_vectors.json"
+      }
+    },
+    {
+      "name": "virtual-mcp-multiplexer-wire",
+      "category": "Multi-Agent Coordination & Protocols",
+      "status": "PRODUCTION",
+      "role": "Model Context Protocol (MCP) tool router for agent execution",
+      "repo_url": "https://github.com/mysukriramli/virtual-mcp-multiplexer-wire",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/virtual-mcp-multiplexer-wire/main/manifest.json",
+      "entrypoints": {
+        "mcp_server": "src/mcp_server.py"
+      }
+    },
+    {
+      "name": "disaster-wire",
+      "category": "Spatial & Environmental Perception",
+      "status": "PRODUCTION",
+      "role": "Global crisis, weather hazard, and emergency telemetry stream",
+      "repo_url": "https://github.com/mysukriramli/disaster-wire",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/disaster-wire/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/active_disasters.json"
+      }
+    },
+    {
+      "name": "agent-canary-wire",
+      "category": "Central Nervous System & Health",
+      "status": "PRODUCTION",
+      "role": "Fleet-wide liveness pulse and distributed heartbeat signal",
+      "repo_url": "https://github.com/mysukriramli/agent-canary-wire",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/agent-canary-wire/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/heartbeat_state.json"
+      }
+    },
+    {
+      "name": "agent-world-time",
+      "category": "Central Nervous System & Health",
+      "status": "PRODUCTION",
+      "role": "Deterministic reference clock and tick coordination",
+      "repo_url": "https://github.com/mysukriramli/agent-world-time",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/agent-world-time/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/world_clock.json"
+      }
+    },
+    {
+      "name": "agent-intel-wire",
+      "category": "Central Nervous System & Health",
+      "status": "PRODUCTION",
+      "role": "High-velocity instruction bus and agent task broadcast",
+      "repo_url": "https://github.com/mysukriramli/agent-intel-wire",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/agent-intel-wire/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/intel_stream.jsonl"
+      }
+    },
+    {
+      "name": "agent-blackboard",
+      "category": "Central Nervous System & Health",
+      "status": "PRODUCTION",
+      "role": "Shared working memory and dead-drop state store",
+      "repo_url": "https://github.com/mysukriramli/agent-blackboard",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/agent-blackboard/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "board/compiled_state.json"
+      }
+    },
+    {
+      "name": "cloud-spot-arbitrage-wire",
+      "category": "Metabolic & Financial Arbitrage",
+      "status": "PRODUCTION",
+      "role": "Multi-cloud spot compute pricing and cost minimization telemetry",
+      "repo_url": "https://github.com/mysukriramli/cloud-spot-arbitrage-wire",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/cloud-spot-arbitrage-wire/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/spot_delta.json"
+      }
+    },
+    {
+      "name": "perp-funding-delta-wire",
+      "category": "Metabolic & Financial Arbitrage",
+      "status": "PRODUCTION",
+      "role": "Perpetual swap funding rate differentials and basis spread feeds",
+      "repo_url": "https://github.com/mysukriramli/perp-funding-delta-wire",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/perp-funding-delta-wire/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/funding_rates.json"
+      }
+    },
+    {
+      "name": "autonomous-prediction-arbitrage-wire",
+      "category": "Metabolic & Financial Arbitrage",
+      "status": "PRODUCTION",
+      "role": "Cross-venue predictive market spread and probability extraction",
+      "repo_url": "https://github.com/mysukriramli/autonomous-prediction-arbitrage-wire",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/autonomous-prediction-arbitrage-wire/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/prediction_spreads.json"
+      }
+    },
+    {
+      "name": "bgp-path-proof-wire",
+      "category": "Immune Defense & Zero-Trust Verification",
+      "status": "PRODUCTION",
+      "role": "BGP route leak detection and cryptographic routing proofs",
+      "repo_url": "https://github.com/mysukriramli/bgp-path-proof-wire",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/bgp-path-proof-wire/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/routing_proofs.json"
+      }
+    },
+    {
+      "name": "maintainer-fracture-wire",
+      "category": "Immune Defense & Zero-Trust Verification",
+      "status": "PRODUCTION",
+      "role": "Open-source maintainer abandonment and supply-chain drift monitor",
+      "repo_url": "https://github.com/mysukriramli/maintainer-fracture-wire",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/maintainer-fracture-wire/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/fracture_index.json"
+      }
+    },
+    {
+      "name": "bytecode-capability-proof-wire",
+      "category": "Musculoskeletal & Sandboxing",
+      "status": "PRODUCTION",
+      "role": "WASM/bytecode permission boundaries and capability attestations",
+      "repo_url": "https://github.com/mysukriramli/bytecode-capability-proof-wire",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/bytecode-capability-proof-wire/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/capability_proofs.json"
+      }
+    }
+  ]
+}
