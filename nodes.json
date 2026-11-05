@@ -1,12 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "catalog_version": "1.0.0",
+  "catalog_version": "2.0.0",
   "namespace": "mysukriramli",
-  "generated_at_utc": "2026-11-01T02:45:00Z",
+  "generated_at_utc": "2026-11-05T12:45:00Z",
   "registry": "https://github.com/mysukriramli/whatrepo",
   "network_telemetry": {
-    "total_nodes": 67,
-    "active_ingestion_nodes": 64,
+    "total_nodes": 90,
+    "active_ingestion_nodes": 84,
     "coordination_clock": "https://raw.githubusercontent.com/mysukriramli/agent-world-time/main/manifest.json",
     "network_heartbeat": "https://raw.githubusercontent.com/mysukriramli/agent-canary-wire/main/manifest.json"
   },
@@ -23,6 +23,22 @@
       }
     },
     {
+      "name": "lae-airspace-risk-edge",
+      "category": "Edge & Physical Grounding",
+      "status": "PRODUCTION",
+      "role": "Low-altitude urban airspace dynamic hazard & convection shear models",
+      "repo_url": "https://github.com/mysukriramli/lae-airspace-risk-edge",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/lae-airspace-risk-edge/main/manifest.json",
+      "dependencies": [
+        "H3-4D-Spacetime-Tensor",
+        "spatial-geometry-proof-wire"
+      ],
+      "entrypoints": {
+        "module": "src/airspace_risk_model.py",
+        "live_feed": "data/latest_airspace_risk.json"
+      }
+    },
+    {
       "name": "hydro-pavement-friction-edge",
       "category": "Edge & Physical Grounding",
       "status": "PRODUCTION",
@@ -36,6 +52,17 @@
       "entrypoints": {
         "module": "src/friction_model.py",
         "live_feed": "data/latest_friction_coefficients.json"
+      }
+    },
+    {
+      "name": "H3-4D-Spacetime-Tensor",
+      "category": "Spatial & Environmental Perception",
+      "status": "PRODUCTION",
+      "role": "4D spacetime volumetric bounding and temporal coordinate indexing",
+      "repo_url": "https://github.com/mysukriramli/H3-4D-Spacetime-Tensor",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/H3-4D-Spacetime-Tensor/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/latest_spacetime_tensor.json"
       }
     },
     {
@@ -61,6 +88,50 @@
       }
     },
     {
+      "name": "disaster-wire",
+      "category": "Spatial & Environmental Perception",
+      "status": "PRODUCTION",
+      "role": "Global crisis, weather hazard, and emergency telemetry stream",
+      "repo_url": "https://github.com/mysukriramli/disaster-wire",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/disaster-wire/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/active_disasters.json"
+      }
+    },
+    {
+      "name": "agentic-news-feed",
+      "category": "Agentic Utility & Protocol Routing",
+      "status": "PRODUCTION",
+      "role": "Real-time agentic event stream ingestion and structured news feeds",
+      "repo_url": "https://github.com/mysukriramli/agentic-news-feed",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/agentic-news-feed/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/latest_events.json"
+      }
+    },
+    {
+      "name": "lexical-agent-hub",
+      "category": "Agentic Utility & Protocol Routing",
+      "status": "PRODUCTION",
+      "role": "Deterministic natural language token, vocabulary, and semantic parsing router",
+      "repo_url": "https://github.com/mysukriramli/lexical-agent-hub",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/lexical-agent-hub/main/manifest.json",
+      "entrypoints": {
+        "module": "src/lexical_hub/parser.py"
+      }
+    },
+    {
+      "name": "fr-bandwidth-tax-agent",
+      "category": "Agentic Utility & Protocol Routing",
+      "status": "PRODUCTION",
+      "role": "Autonomous bandwidth transit pricing, latency tariffs, and data routing economics",
+      "repo_url": "https://github.com/mysukriramli/fr-bandwidth-tax-agent",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/fr-bandwidth-tax-agent/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/transit_tariffs.json"
+      }
+    },
+    {
       "name": "virtual-mcp-multiplexer-wire",
       "category": "Multi-Agent Coordination & Protocols",
       "status": "PRODUCTION",
@@ -72,14 +143,180 @@
       }
     },
     {
-      "name": "disaster-wire",
-      "category": "Spatial & Environmental Perception",
+      "name": "mother-bot",
+      "category": "Multi-Agent Orchestration & Hierarchy",
       "status": "PRODUCTION",
-      "role": "Global crisis, weather hazard, and emergency telemetry stream",
-      "repo_url": "https://github.com/mysukriramli/disaster-wire",
-      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/disaster-wire/main/manifest.json",
+      "role": "Autonomous swarm parent orchestrator, task planner, and delegation controller",
+      "repo_url": "https://github.com/mysukriramli/mother-bot",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/mother-bot/main/manifest.json",
       "entrypoints": {
-        "live_feed": "data/active_disasters.json"
+        "orchestrator": "agent.py"
+      }
+    },
+    {
+      "name": "daughter-bot",
+      "category": "Multi-Agent Orchestration & Hierarchy",
+      "status": "PRODUCTION",
+      "role": "Autonomous worker micro-agent runtime and delegated task executor",
+      "repo_url": "https://github.com/mysukriramli/daughter-bot",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/daughter-bot/main/manifest.json",
+      "entrypoints": {
+        "worker": "agent.py"
+      }
+    },
+    {
+      "name": "opportunity-discovery-agent-9667",
+      "category": "Agentic Market Intelligence",
+      "status": "PRODUCTION",
+      "role": "Autonomous high-frequency arbitrage and structural market inefficiency scanner",
+      "repo_url": "https://github.com/mysukriramli/opportunity-discovery-agent-9667",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/opportunity-discovery-agent-9667/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/discovered_opportunities.json"
+      }
+    },
+    {
+      "name": "geo-arbitrage-intelligence-engine-2320",
+      "category": "Agentic Market Intelligence",
+      "status": "PRODUCTION",
+      "role": "Cross-jurisdiction regional cost disparity and compute-price delta engine",
+      "repo_url": "https://github.com/mysukriramli/geo-arbitrage-intelligence-engine-2320",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/geo-arbitrage-intelligence-engine-2320/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/geo_deltas.json"
+      }
+    },
+    {
+      "name": "technology-diffusion-radar-1752",
+      "category": "Agentic Market Intelligence",
+      "status": "PRODUCTION",
+      "role": "Cross-domain algorithmic technology adoption velocity and open-source diffusion radar",
+      "repo_url": "https://github.com/mysukriramli/technology-diffusion-radar-1752",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/technology-diffusion-radar-1752/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/diffusion_index.json"
+      }
+    },
+    {
+      "name": "salah-time-observer-8638",
+      "category": "Planetary OS & Astronomical Synchronization",
+      "status": "PRODUCTION",
+      "role": "High-precision solar angle and deterministic astronomical time calculation feed",
+      "repo_url": "https://github.com/mysukriramli/salah-time-observer-8638",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/salah-time-observer-8638/main/manifest.json",
+      "entrypoints": {
+        "module": "main.py",
+        "live_feed": "data/calculated_times.json"
+      }
+    },
+    {
+      "name": "earth-presence-intelligence-grid-1552",
+      "category": "Planetary OS & Environmental Substrate",
+      "status": "PRODUCTION",
+      "role": "Global bio-presence, human activity footprint, and continuous planetary state matrix",
+      "repo_url": "https://github.com/mysukriramli/earth-presence-intelligence-grid-1552",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/earth-presence-intelligence-grid-1552/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/presence_matrix.json"
+      }
+    },
+    {
+      "name": "circadian-os-3882",
+      "category": "Planetary OS & Environmental Substrate",
+      "status": "PRODUCTION",
+      "role": "Biological rhythm, day-night cycle, and circadian synchrony substrate for agent workloads",
+      "repo_url": "https://github.com/mysukriramli/circadian-os-3882",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/circadian-os-3882/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/circadian_phase.json"
+      }
+    },
+    {
+      "name": "lunar-intelligence-service-0660",
+      "category": "Planetary OS & Astronomical Synchronization",
+      "status": "PRODUCTION",
+      "role": "Ephemeris, lunar phase angle, tidal influence, and orbital position calculations",
+      "repo_url": "https://github.com/mysukriramli/lunar-intelligence-service-0660",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/lunar-intelligence-service-0660/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/lunar_ephemeris.json"
+      }
+    },
+    {
+      "name": "atmos-os-6137",
+      "category": "Planetary OS & Environmental Substrate",
+      "status": "PRODUCTION",
+      "role": "Global atmospheric pressure, air mass boundary, and tropospheric gradient telemetry",
+      "repo_url": "https://github.com/mysukriramli/atmos-os-6137",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/atmos-os-6137/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/atmospheric_state.json"
+      }
+    },
+    {
+      "name": "moisture-os-4075",
+      "category": "Planetary OS & Environmental Substrate",
+      "status": "PRODUCTION",
+      "role": "Relative humidity, vapor deficit, and precipitable water surface indexing",
+      "repo_url": "https://github.com/mysukriramli/moisture-os-4075",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/moisture-os-4075/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/moisture_index.json"
+      }
+    },
+    {
+      "name": "sunos-7435",
+      "category": "Planetary OS & Astronomical Synchronization",
+      "status": "PRODUCTION",
+      "role": "Solar azimuth, elevation, surface irradiance, and daylight boundary modeling",
+      "repo_url": "https://github.com/mysukriramli/sunos-7435",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/sunos-7435/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/solar_telemetry.json"
+      }
+    },
+    {
+      "name": "entropy-os-0407",
+      "category": "Planetary OS & Environmental Substrate",
+      "status": "PRODUCTION",
+      "role": "Thermodynamic environmental entropy, disorder metrics, and energy dissipation telemetry",
+      "repo_url": "https://github.com/mysukriramli/entropy-os-0407",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/entropy-os-0407/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/entropy_state.json"
+      }
+    },
+    {
+      "name": "cosmic-wire-4451",
+      "category": "Planetary OS & Astronomical Synchronization",
+      "status": "PRODUCTION",
+      "role": "Solar flux, space weather, geomagnetic disturbance (Kp-index), and cosmic ray telemetry",
+      "repo_url": "https://github.com/mysukriramli/cosmic-wire-4451",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/cosmic-wire-4451/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/space_weather.json"
+      }
+    },
+    {
+      "name": "radio-os-intelligence-7677",
+      "category": "Planetary OS & Environmental Substrate",
+      "status": "PRODUCTION",
+      "role": "RF spectrum occupancy, ionospheric propagation conditions, and noise floor index",
+      "repo_url": "https://github.com/mysukriramli/radio-os-intelligence-7677",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/radio-os-intelligence-7677/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/rf_propagation.json"
+      }
+    },
+    {
+      "name": "seasonwire-9987",
+      "category": "Planetary OS & Environmental Substrate",
+      "status": "PRODUCTION",
+      "role": "Solstice, equinox, seasonal transition indices, and phenological cadence tracking",
+      "repo_url": "https://github.com/mysukriramli/seasonwire-9987",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/seasonwire-9987/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/seasonal_phase.json"
       }
     },
     {
@@ -127,6 +364,28 @@
       }
     },
     {
+      "name": "agent-ops-wire",
+      "category": "Central Nervous System & Health",
+      "status": "PRODUCTION",
+      "role": "Fleet CI/CD runner orchestration and distributed pipeline monitor",
+      "repo_url": "https://github.com/mysukriramli/agent-ops-wire",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/agent-ops-wire/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/ops_state.json"
+      }
+    },
+    {
+      "name": "agent-intelligence-hub",
+      "category": "Central Nervous System & Health",
+      "status": "PRODUCTION",
+      "role": "Central multi-agent message routing and task distribution hub",
+      "repo_url": "https://github.com/mysukriramli/agent-intelligence-hub",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/agent-intelligence-hub/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/routing_table.json"
+      }
+    },
+    {
       "name": "cloud-spot-arbitrage-wire",
       "category": "Metabolic & Financial Arbitrage",
       "status": "PRODUCTION",
@@ -160,6 +419,28 @@
       }
     },
     {
+      "name": "autonomous-bounty-hunter-wire",
+      "category": "Metabolic & Financial Arbitrage",
+      "status": "PRODUCTION",
+      "role": "Autonomous smart contract bounty scanning and capital execution",
+      "repo_url": "https://github.com/mysukriramli/autonomous-bounty-hunter-wire",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/autonomous-bounty-hunter-wire/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/active_bounties.json"
+      }
+    },
+    {
+      "name": "carbon-compute-wire",
+      "category": "Metabolic & Financial Arbitrage",
+      "status": "PRODUCTION",
+      "role": "Real-time electrical grid carbon intensity and green compute routing",
+      "repo_url": "https://github.com/mysukriramli/carbon-compute-wire",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/carbon-compute-wire/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/carbon_intensity.json"
+      }
+    },
+    {
       "name": "bgp-path-proof-wire",
       "category": "Immune Defense & Zero-Trust Verification",
       "status": "PRODUCTION",
@@ -179,6 +460,50 @@
       "manifest_url": "https://raw.githubusercontent.com/mysukriramli/maintainer-fracture-wire/main/manifest.json",
       "entrypoints": {
         "live_feed": "data/fracture_index.json"
+      }
+    },
+    {
+      "name": "exploit-blast-radius-wire",
+      "category": "Immune Defense & Zero-Trust Verification",
+      "status": "PRODUCTION",
+      "role": "Downstream dependency vulnerability blast radius and exposure calculation",
+      "repo_url": "https://github.com/mysukriramli/exploit-blast-radius-wire",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/exploit-blast-radius-wire/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/blast_radius.json"
+      }
+    },
+    {
+      "name": "api-drift-preemption-wire",
+      "category": "Immune Defense & Zero-Trust Verification",
+      "status": "PRODUCTION",
+      "role": "Downstream third-party API schema drift and breaking contract detection",
+      "repo_url": "https://github.com/mysukriramli/api-drift-preemption-wire",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/api-drift-preemption-wire/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/schema_drift.json"
+      }
+    },
+    {
+      "name": "sec-agent-wire",
+      "category": "Immune Defense & Zero-Trust Verification",
+      "status": "PRODUCTION",
+      "role": "Autonomous security posture and distributed vulnerability scanning telemetry",
+      "repo_url": "https://github.com/mysukriramli/sec-agent-wire",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/sec-agent-wire/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/security_posture.json"
+      }
+    },
+    {
+      "name": "php-exposure-radar",
+      "category": "Immune Defense & Zero-Trust Verification",
+      "status": "PRODUCTION",
+      "role": "Global legacy web runtime and unpatched attack surface exposure radar",
+      "repo_url": "https://github.com/mysukriramli/php-exposure-radar",
+      "manifest_url": "https://raw.githubusercontent.com/mysukriramli/php-exposure-radar/main/manifest.json",
+      "entrypoints": {
+        "live_feed": "data/exposure_radar.json"
       }
     },
     {
