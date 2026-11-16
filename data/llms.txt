@@ -1,5 +1,5 @@
 # API Drift Preemption Wire
-> Last updated: 2026-11-15T18:57:42.612012+00:00 UTC | Continuous Contract Breakage Radar for AI Agents
+> Last updated: 2026-11-16T06:46:54.806244+00:00 UTC | Continuous Contract Breakage Radar for AI Agents
 > Tracks breaking changes in upstream OpenAPI specifications and SDK release staleness.
 
 ## Active API Drift Directives
